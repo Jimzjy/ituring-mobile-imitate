@@ -1,10 +1,10 @@
 <template>
   <div id="header-menu">
     <router-link to="/search">
-      <img src="@/assets/icon/search.svg">
+      <v-icon name="custom-search" />
     </router-link>
     <router-link to="/cart" v-if="loginStatus">
-      <img src="@/assets/icon/cart.svg">
+      <v-icon name="custom-cart" />
     </router-link>
     <router-link to="/login" v-if="!loginStatus">
       <span id="login-button">登陆</span>
@@ -33,11 +33,12 @@ export default class HeaderMenu extends Vue {
   box-sizing: border-box;
   background: url("../assets/img/logo.png") content-box no-repeat left / 180px 35.8px;
 
-  img {
+  .fa-icon {
     float: right;
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.1rem;
+    width: 1.1rem;
     margin: 1.2rem 0 0 1.2rem;
+    fill: $accent-color;
   }
 
   #login-button {

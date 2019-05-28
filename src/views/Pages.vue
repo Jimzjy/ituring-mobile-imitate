@@ -1,10 +1,12 @@
 <template>
-  <header>
-    <header-menu></header-menu>
-    <header-nav></header-nav>
+  <div>
+    <header>
+      <header-menu></header-menu>
+      <header-nav></header-nav>
+    </header>
     <router-view/>
     <bottom-navbar></bottom-navbar>
-  </header>
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,10 +24,9 @@ export default class Pages extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/style/_global.scss";
 
 header {
   height: 7.8rem;
-  background: $primary-color;
 }
+
 </style>

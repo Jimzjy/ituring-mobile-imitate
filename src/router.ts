@@ -29,13 +29,13 @@ export default new Router({
           path: 'article',
           component: Article,
           name: routePageNames[2]
-        },
-        {
-          path: 'user',
-          component: User,
-          name: routePageNames[3]
         }
       ]
+    },
+    {
+      path: '/user',
+      component: User,
+      name: routePageNames[3]
     },
     {
       path: '/login',
