@@ -1,22 +1,21 @@
 <template>
   <header>
-    <div id="header-top">
-      <header-menu></header-menu>
-    </div>
-    <div id="header-nav">
-
-    </div>
+    <header-menu></header-menu>
+    <header-nav></header-nav>
+    <router-view/>
+    <bottom-navbar></bottom-navbar>
   </header>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
-import { HeaderMenu, HeaderNav } from '@/components';
+import { Vue, Component } from 'vue-property-decorator'
+import { HeaderMenu, HeaderNav, BottomNavbar } from '@/components'
 
 @Component({
   components: {
-    "header-menu": HeaderMenu,
-    "header-nav": HeaderNav
+    'header-menu': HeaderMenu,
+    'header-nav': HeaderNav,
+    'bottom-navbar': BottomNavbar
   }
 })
 export default class Pages extends Vue {}
@@ -28,19 +27,5 @@ export default class Pages extends Vue {}
 header {
   height: 7.8rem;
   background: $primary-color;
-
-  #header-top {
-    height: 4.75rem;
-    padding: 1rem 0.9rem;
-    box-sizing: border-box;
-    background: url("../assets/img/logo.png") content-box no-repeat left / 180px
-      35.8px;
-  }
-
-  #header-nav {
-    height: 3.05rem;
-    padding: 0 0 1rem 0.9rem;
-    box-sizing: border-box;
-  }
 }
 </style>

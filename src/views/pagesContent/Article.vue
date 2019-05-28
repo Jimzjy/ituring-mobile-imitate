@@ -1,10 +1,15 @@
 <template>
-  <h1>Login</h1>
+  <div>Article</div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component
-export default class Login extends Vue {}
+export default class Article extends Vue {
+}
 </script>
+
+<style lang="scss" scoped>
+
+</style>
