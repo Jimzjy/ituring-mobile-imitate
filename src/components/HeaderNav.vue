@@ -1,5 +1,5 @@
 <template>
-  <div id="header-nav">
+  <div class="header-nav">
     <div class="home-topics" v-if="isHome">
       <span v-for="topic in topicsData" :key="topic">
         <router-link :to="'/search/' + topic" class="topic-content">{{ topic }}</router-link>
@@ -25,7 +25,7 @@ export default class HeaderNav extends Vue {
   isHome: boolean = true
   topicFocused: string = '所有'
 
-  mounted () {
+  created () {
     this.updateTopics()
   }
 
@@ -44,10 +44,9 @@ export default class HeaderNav extends Vue {
 </script>
 
 <style lang="scss" scoped>
-#header-nav {
+.header-nav {
   height: 3.05rem;
   padding: 0 0 1rem 0.9rem;
-  box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;

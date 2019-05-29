@@ -1,5 +1,5 @@
 <template>
-  <div id="header-menu">
+  <div class="header-menu">
     <router-link to="/search">
       <v-icon name="custom-search" />
     </router-link>
@@ -27,7 +27,7 @@ export default class HeaderMenu extends Vue {
 <style lang="scss" scoped>
 @import "@/assets/style/_global.scss";
 
-#header-menu {
+.header-menu {
   height: 4.75rem;
   padding: 1rem 0.9rem;
   box-sizing: border-box;

@@ -1,5 +1,5 @@
 <template>
-  <div id="bottom-navbar">
+  <div class="bottom-navbar">
     <router-link v-for="(name, index) in navRouteName" :key="name" :to="{ name }" class="navbar-tab" exact>
       <v-icon :name="'custom-' + name"/>
       <div class="title">{{navTitle[index]}}</div>
@@ -24,7 +24,7 @@ export default class BottomNavbar extends Vue {
 $bottom-height: 3.2rem;
 $icon-size: 1.4rem;
 
-#bottom-navbar {
+.bottom-navbar {
   position: fixed;
   display: flex;
   flex-direction: row;

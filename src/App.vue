@@ -9,12 +9,3 @@
     margin: 0;
   }
 </style>
-
-<style lang="scss">
-@import "@/assets/style/_global.scss";
-
-#app {
-  background: $primary-color;
-}
-
-</style>
