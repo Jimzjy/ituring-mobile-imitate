@@ -1,7 +1,7 @@
 import Mock from 'mockjs'
-import { topicsUrl, homeDataUrl, moreBooksUrl } from '../service'
+import { topicsUrl, homeDataUrl, moreBooksUrl, userInfoUrl } from '../service'
 import { routePageNames } from '@/router'
-import { InfoSwipe, HomeData, Book } from '@/model'
+import { InfoSwipe, HomeData, Book, UserInfo } from '@/model'
 
 Mock.setup({
   timeout: '100-500'
@@ -104,8 +104,12 @@ const books: Array<Book> = [
   }
 ]
 
+const shuffle = (items: Array<any>) => {
+  return items.sort(() => Math.random() - 0.5)
+}
+
 // HeaderNav
-Mock.mock(`${topicsUrl}/${routePageNames[0]}`, topicsHome.sort(() => Math.random() - 0.5).concat('最新上线', '每周特价'))
+Mock.mock(`${topicsUrl}/${routePageNames[0]}`, shuffle(topicsHome).concat('最新上线', '每周特价'))
 Mock.mock(`${topicsUrl}/${routePageNames[1]}`, topicsBook)
 Mock.mock(`${topicsUrl}/${routePageNames[2]}`, topicsArticle)
 
@@ -118,16 +122,22 @@ Mock.mock(homeDataUrl, () => {
   for (let title of bookViewTitles) {
     homeData.booksWithTitle.push({
       title,
-      books: shuffle(books).slice(0, (4 + Math.random() * 4))
+      books: shuffle(books).slice(0, Math.floor(4 + Math.random() * 4))
     })
   }
 
   return homeData
 })
 
-const shuffle = (items: Array<any>) => {
-  return items.sort(() => Math.random() - 0.5)
-}
-
 // MoreBooks
-Mock.mock(moreBooksUrl, books)
+Mock.mock(moreBooksUrl, shuffle(books).slice(0, Math.floor(6 + Math.random() * (books.length - 6))))
+
+// UserInfo
+Mock.mock(userInfoUrl, (): UserInfo => {
+  return {
+    userName: 'Jimzjy',
+    membershipAge: 2,
+    actions: [0, 0, 1, 7],
+    actionTopics: ['文章', '评论', '推荐', '收藏']
+  }
+})

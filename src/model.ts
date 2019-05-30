@@ -19,8 +19,16 @@ interface HomeData {
   booksWithTitle?: Array<BooksWithTitle>,
 }
 
+interface UserInfo {
+  userName: string,
+  membershipAge: number,
+  actions: Array<number>,
+  actionTopics: Array<string>
+}
+
 export {
   InfoSwipe,
   HomeData,
-  Book
+  Book,
+  UserInfo
 }
