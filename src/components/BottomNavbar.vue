@@ -21,7 +21,6 @@ export default class BottomNavbar extends Vue {
 <style lang="scss" scoped>
 @import '@/assets/style/_global.scss';
 
-$bottom-height: 3.2rem;
 $icon-size: 1.4rem;
 
 .bottom-navbar {

@@ -2,7 +2,7 @@
   <div class="header-nav">
     <div class="home-topics" v-if="isHome">
       <span v-for="topic in topicsData" :key="topic">
-        <router-link :to="'/search/' + topic" class="topic-content">{{ topic }}</router-link>
+        <router-link :to="{ name: 'search', query: { placeholder: topic } }" class="topic-content">{{ topic }}</router-link>
       </span>
     </div>
     <div class="other-topics" v-if="!isHome">
@@ -50,6 +50,7 @@ export default class HeaderNav extends Vue {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  box-sizing: border-box;
 
   &::-webkit-scrollbar {
     display: none;

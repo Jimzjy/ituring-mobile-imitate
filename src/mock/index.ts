@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-import { topicsUrl, homeDataUrl } from '../service'
+import { topicsUrl, homeDataUrl, moreBooksUrl } from '../service'
 import { routePageNames } from '@/router'
 import { InfoSwipe, HomeData, Book } from '@/model'
 
@@ -128,3 +128,6 @@ Mock.mock(homeDataUrl, () => {
 const shuffle = (items: Array<any>) => {
   return items.sort(() => Math.random() - 0.5)
 }
+
+// MoreBooks
+Mock.mock(moreBooksUrl, books)

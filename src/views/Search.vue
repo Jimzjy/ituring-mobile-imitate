@@ -1,11 +1,14 @@
 <template>
-  <div></div>
+  <div>{{ placeholder }}</div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
-export default class Search extends Vue {}
+@Component
+export default class Search extends Vue {
+  @Prop({ default: '' }) readonly placeholder!: string;
+}
 </script>
 
 <style lang="scss" scoped>

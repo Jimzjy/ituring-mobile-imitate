@@ -5,6 +5,7 @@
       <header-nav></header-nav>
     </header>
     <router-view/>
+    <div id="bottom-space"></div>
   </div>
 </template>
 
@@ -29,6 +30,10 @@ export default class Pages extends Vue {}
 
   header {
     height: 7.8rem;
+  }
+
+  #bottom-space {
+    height: $bottom-height;
   }
 }
 

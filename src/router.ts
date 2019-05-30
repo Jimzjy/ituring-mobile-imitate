@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { Pages, Login, NotFound, PagesContent } from '@/views'
+import { Pages, Login, NotFound, PagesContent, MoreBooks, Search } from '@/views'
 import { Home, Book, Article, User } from '@/views/pagesContents'
 
 Vue.use(Router)
@@ -46,6 +46,18 @@ export default new Router({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path: '/more-books',
+      component: MoreBooks,
+      name: 'more-books',
+      props: (route) => ({ title: route.query.title })
+    },
+    {
+      path: '/search',
+      component: Search,
+      name: 'search',
+      props: (route) => ({ placeholder: route.query.placeholder })
     },
     {
       path: '*',

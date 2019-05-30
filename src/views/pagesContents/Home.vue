@@ -3,7 +3,7 @@
     <swiper :data="data.infoSwipe"></swiper>
     <sepline></sepline>
     <div v-for="(item, index) in data.booksWithTitle" :key="index" >
-      <special-view :title="item.title">
+      <special-view :title="item.title" :more="item.books.length > 4">
         <book-list-view :books="item.books"></book-list-view>
       </special-view>
       <sepline></sepline>
