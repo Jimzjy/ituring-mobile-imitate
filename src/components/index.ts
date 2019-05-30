@@ -4,6 +4,7 @@ import BottomNavbar from './BottomNavbar.vue'
 import Swiper from './Swiper.vue'
 import BookListView from './BookListView.vue'
 import SpecialView from './SpecialView.vue'
+import TopicTabView from './TopicTabView.vue'
 
 export {
   HeaderMenu,
@@ -11,5 +12,6 @@ export {
   BottomNavbar,
   Swiper,
   BookListView,
-  SpecialView
+  SpecialView,
+  TopicTabView
 }

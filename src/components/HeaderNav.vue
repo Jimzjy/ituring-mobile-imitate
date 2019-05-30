@@ -6,8 +6,8 @@
       </span>
     </div>
     <div class="other-topics" v-if="!isHome">
-      <span v-for="topic in topicsData" :key="topic">
-        <div :class="[topicFocused === topic ? 'topic-content-foucused' : 'topic-content']" @click="onTopicClick(topic)">{{ topic }}</div>
+      <span v-for="(topic, index) in topicsData" :key="topic">
+        <div :class="[isCurrentNav(index) ? 'topic-content-foucused' : 'topic-content']" @click="onTopicClick(index)">{{ topic }}</div>
       </span>
     </div>
   </div>
@@ -17,13 +17,16 @@
 import { Vue, Component, Watch } from 'vue-property-decorator'
 import { topicsUrl } from '@/service'
 import { routePageNames } from '@/router'
+import { mapState } from 'vuex'
 
-@Component
+@Component({
+  computed: mapState(['currentHeaderNav'])
+})
 export default class HeaderNav extends Vue {
   $http!: any
+  currentHeaderNav!: number
   topicsData: Array<string> = []
   isHome: boolean = true
-  topicFocused: string = '所有'
 
   created () {
     this.updateTopics()
@@ -37,8 +40,12 @@ export default class HeaderNav extends Vue {
     })
   }
 
-  onTopicClick (topic: string) {
-    this.topicFocused = topic
+  onTopicClick (n: number) {
+    this.$store.commit('changeCurrentHeaderNav', n)
+  }
+
+  isCurrentNav (n: number): boolean {
+    return this.currentHeaderNav === n
   }
 }
 </script>

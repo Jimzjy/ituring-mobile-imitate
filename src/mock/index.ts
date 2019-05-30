@@ -4,7 +4,7 @@ import { routePageNames } from '@/router'
 import { InfoSwipe, HomeData, Book, UserInfo } from '@/model'
 
 Mock.setup({
-  timeout: '100-500'
+  timeout: '0'
 })
 
 const topicsHome = [
@@ -130,7 +130,7 @@ Mock.mock(homeDataUrl, () => {
 })
 
 // MoreBooks
-Mock.mock(moreBooksUrl, shuffle(books).slice(0, Math.floor(6 + Math.random() * (books.length - 6))))
+Mock.mock(moreBooksUrl, shuffle(books).slice(0, Math.floor(9 + Math.random() * (books.length - 9))))
 
 // UserInfo
 Mock.mock(userInfoUrl, (): UserInfo => {

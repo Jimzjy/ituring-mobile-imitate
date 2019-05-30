@@ -4,6 +4,7 @@ import Pages from './Pages.vue'
 import PagesContent from './PagesContent.vue'
 import MoreBooks from './MoreBooks.vue'
 import Search from './Search.vue'
+import Cart from './Cart.vue'
 
 export {
   Login,
@@ -11,5 +12,6 @@ export {
   Pages,
   PagesContent,
   MoreBooks,
-  Search
+  Search,
+  Cart
 }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import { Pages, Login, NotFound, PagesContent, MoreBooks, Search } from '@/views'
+import Router, { Route } from 'vue-router'
+import $store from './store'
+import { Pages, Login, NotFound, PagesContent, MoreBooks, Search, Cart } from '@/views'
 import { Home, Book, Article, User } from '@/views/pagesContents'
 
 Vue.use(Router)
@@ -27,25 +28,30 @@ export default new Router({
             {
               path: 'book',
               component: Book,
-              name: routePageNames[1]
+              name: routePageNames[1],
+              beforeEnter: refreshHeaderNav
             },
             {
               path: 'article',
               component: Article,
-              name: routePageNames[2]
+              name: routePageNames[2],
+              beforeEnter: refreshHeaderNav
             }
           ]
         },
         {
           path: 'user',
           component: User,
-          name: routePageNames[3]
+          name: routePageNames[3],
+          beforeEnter: authGuard
         }
       ]
     },
     {
       path: '/login',
-      component: Login
+      component: Login,
+      name: 'login',
+      props: (route) => ({ to: route.query.to })
     },
     {
       path: '/more-books',
@@ -60,8 +66,30 @@ export default new Router({
       props: (route) => ({ placeholder: route.query.placeholder })
     },
     {
+      path: '/cart',
+      component: Cart,
+      name: 'cart',
+      beforeEnter: authGuard
+    },
+    {
       path: '*',
-      component: NotFound
+      component: NotFound,
+      name: 'not-found'
     }
   ]
 })
+
+function authGuard (to: Route, from: Route, next: Function) {
+  if ($store.state.loginStatus) {
+    next()
+    return
+  }
+
+  next({ name: 'login', query: { to: to.name } })
+}
+
+function refreshHeaderNav (to: Route, from: Route, next: Function) {
+  $store.commit('changeCurrentHeaderNav', 0)
+
+  next()
+}

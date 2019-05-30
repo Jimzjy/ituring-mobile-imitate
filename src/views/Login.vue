@@ -29,13 +29,15 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
 @Component
 export default class Login extends Vue {
+  @Prop({ default: 'home' }) readonly to!: string
+
   onLoginClick () {
-    this.$store.state.loginStatus = true
-    this.$router.push('/')
+    this.$store.commit('login')
+    this.$router.push({ name: this.to })
   }
 }
 </script>
