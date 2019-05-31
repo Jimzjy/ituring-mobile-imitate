@@ -38,67 +38,67 @@ const bookViewTitles = [
 ]
 const books: Array<Book> = [
   {
-    imgUrl: '/book/1.jpg',
+    imgUrl: './book/1.jpg',
     name: '深度学习入门：基于Python的理论与实现',
     author: '斋藤康毅'
   },
   {
-    imgUrl: '/book/2.jpg',
+    imgUrl: './book/2.jpg',
     name: '数学女孩4：随机算法',
     author: '结城浩'
   },
   {
-    imgUrl: '/book/3.jpg',
+    imgUrl: './book/3.jpg',
     name: '我的第一本算法书',
     author: '宫崎修一,石田保辉'
   },
   {
-    imgUrl: '/book/4.jpg',
+    imgUrl: './book/4.jpg',
     name: '微积分入门（修订版）',
     author: '[日]小平邦彦'
   },
   {
-    imgUrl: '/book/5.jpg',
+    imgUrl: './book/5.jpg',
     name: '精通CSS：高级Web标准解决方案（第3版）',
     author: '[英]安迪•巴德,[瑞典]埃米尔•比约克隆德'
   },
   {
-    imgUrl: '/book/6.jpg',
+    imgUrl: './book/6.jpg',
     name: 'shell脚本实战（第2版）',
     author: '[美]戴夫•泰勒 [美]布兰登•佩里'
   },
   {
-    imgUrl: '/book/7.jpg',
+    imgUrl: './book/7.jpg',
     name: '第一行代码——Android（第2版）',
     author: '郭霖'
   },
   {
-    imgUrl: '/book/8.jpg',
+    imgUrl: './book/8.jpg',
     name: 'Django企业开发实战：高效Python Web框架指南',
     author: '胡阳'
   },
   {
-    imgUrl: '/book/9.jpg',
+    imgUrl: './book/9.jpg',
     name: 'Flask Web开发：基于Python的Web应用开发实战（第2版）',
     author: '[美]米格尔•格林贝格'
   },
   {
-    imgUrl: '/book/10.jpg',
+    imgUrl: './book/10.jpg',
     name: '极简算法史：从数学到机器的故事',
     author: '[法] 吕克•德•布拉班迪尔 '
   },
   {
-    imgUrl: '/book/11.jpg',
+    imgUrl: './book/11.jpg',
     name: 'Node.js实战（第2版）',
     author: '[英] 亚历克斯•杨 等'
   },
   {
-    imgUrl: '/book/12.jpg',
+    imgUrl: './book/12.jpg',
     name: 'Python深度学习',
     author: '[美] 弗朗索瓦•肖莱'
   },
   {
-    imgUrl: '/book/13.jpg',
+    imgUrl: './book/13.jpg',
     name: 'React设计模式与最佳实践',
     author: '米凯莱•贝尔托利（Michele Bertoli）'
   }
@@ -112,7 +112,7 @@ const articles: Array<Article> = [
     tags: [],
     topics: [],
     author: 'JohnGUO',
-    avatar: '/avatar/0.png'
+    avatar: './avatar/0.png'
   },
   {
     title: '对话BAT数据分析专家：数据分析比你想象的更强大',
@@ -121,7 +121,7 @@ const articles: Array<Article> = [
     tags: ['图灵访谈'],
     topics: [],
     author: '李冰_',
-    avatar: '/avatar/1.jpg'
+    avatar: './avatar/1.jpg'
   },
   {
     title: '2019 跟着图灵听课去（6月）',
@@ -130,7 +130,7 @@ const articles: Array<Article> = [
     tags: ['跟着图灵听课去'],
     topics: ['跟着图灵听课去!'],
     author: '袁野',
-    avatar: '/avatar/2.png'
+    avatar: './avatar/2.png'
   },
   {
     title: '6月书讯：看到这么多本硬核新书，太激动了！',
@@ -139,7 +139,7 @@ const articles: Array<Article> = [
     tags: [],
     topics: [],
     author: '张敏',
-    avatar: '/avatar/3.png'
+    avatar: './avatar/3.png'
   },
   {
     title: 'Gradle Project Sync Failed',
@@ -148,7 +148,7 @@ const articles: Array<Article> = [
     tags: ['读书笔记'],
     topics: [],
     author: '白色风车',
-    avatar: '/avatar/4.png'
+    avatar: './avatar/4.png'
   },
   {
     title: '使用 Elasticsearch 做一个好用的日语搜索引擎及自动补全',
@@ -157,7 +157,7 @@ const articles: Array<Article> = [
     tags: [],
     topics: [],
     author: 'Allo',
-    avatar: '/avatar/5.png'
+    avatar: './avatar/5.png'
   },
   {
     title: '观影2019｜海蒂和爷爷',
@@ -166,7 +166,7 @@ const articles: Array<Article> = [
     tags: [],
     topics: ['QuanTalk'],
     author: 'AdolphLWQ',
-    avatar: '/avatar/6.png'
+    avatar: './avatar/6.png'
   }
 ]
 
