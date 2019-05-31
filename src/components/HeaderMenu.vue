@@ -3,7 +3,7 @@
     <router-link to="/search">
       <v-icon name="custom-search" />
     </router-link>
-    <router-link to="/cart" v-if="loginStatus">
+    <router-link to="/" v-if="loginStatus">
       <v-icon name="custom-cart" />
     </router-link>
     <router-link to="/login" v-if="!loginStatus">

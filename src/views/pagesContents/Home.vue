@@ -8,12 +8,15 @@
       </special-view>
       <sepline></sepline>
     </div>
+    <special-view title="推荐文章">
+      <article-list-view :articles="data.articles" :showTag=false></article-list-view>
+    </special-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator'
-import { Swiper, SpecialView, BookListView } from '@/components'
+import { Swiper, SpecialView, BookListView, ArticleListView } from '@/components'
 import { homeDataUrl } from '@/service'
 import { HomeData } from '@/model'
 
@@ -21,7 +24,8 @@ import { HomeData } from '@/model'
   components: {
     'swiper': Swiper,
     'special-view': SpecialView,
-    'book-list-view': BookListView
+    'book-list-view': BookListView,
+    'article-list-view': ArticleListView
   }
 })
 export default class Home extends Vue {
@@ -45,6 +49,7 @@ export default class Home extends Vue {
 
 #home {
   background: #fff;
+  min-height: 100vh;
 }
 
 </style>

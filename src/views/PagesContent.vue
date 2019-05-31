@@ -34,6 +34,7 @@ export default class Pages extends Vue {}
 
   #bottom-space {
     height: $bottom-height;
+    background: #fff;
   }
 }
 

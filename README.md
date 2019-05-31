@@ -1,4 +1,4 @@
-模仿 http://m.ituring.com.cn/
+Imitation of http://m.ituring.com.cn/
 
 ### Usage
 ```

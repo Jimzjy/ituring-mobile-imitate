@@ -17,6 +17,7 @@ interface BooksWithTitle {
 interface HomeData {
   infoSwipe?: Array<InfoSwipe>,
   booksWithTitle?: Array<BooksWithTitle>,
+  articles?: Array<Article>
 }
 
 interface UserInfo {
@@ -26,9 +27,20 @@ interface UserInfo {
   actionTopics: Array<string>
 }
 
+interface Article {
+  title: string,
+  date: string,
+  actions: Array<number>,
+  tags: Array<string>,
+  topics: Array<string>,
+  author: string,
+  avatar: string
+}
+
 export {
   InfoSwipe,
   HomeData,
   Book,
-  UserInfo
+  UserInfo,
+  Article
 }

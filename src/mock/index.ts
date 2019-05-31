@@ -1,7 +1,7 @@
 import Mock from 'mockjs'
-import { topicsUrl, homeDataUrl, moreBooksUrl, userInfoUrl } from '../service'
+import { topicsUrl, homeDataUrl, moreBooksUrl, userInfoUrl, articlesUrl } from '../service'
 import { routePageNames } from '@/router'
-import { InfoSwipe, HomeData, Book, UserInfo } from '@/model'
+import { InfoSwipe, HomeData, Book, UserInfo, Article } from '@/model'
 
 Mock.setup({
   timeout: '0'
@@ -104,6 +104,72 @@ const books: Array<Book> = [
   }
 ]
 
+const articles: Array<Article> = [
+  {
+    title: 'Django自定义模型管理器',
+    date: '2019-05-30',
+    actions: [0, 33],
+    tags: [],
+    topics: [],
+    author: 'JohnGUO',
+    avatar: '/avatar/0.png'
+  },
+  {
+    title: '对话BAT数据分析专家：数据分析比你想象的更强大',
+    date: '2019-05-30',
+    actions: [0, 103],
+    tags: ['图灵访谈'],
+    topics: [],
+    author: '李冰_',
+    avatar: '/avatar/1.jpg'
+  },
+  {
+    title: '2019 跟着图灵听课去（6月）',
+    date: '2019-05-24',
+    actions: [1, 211],
+    tags: ['跟着图灵听课去'],
+    topics: ['跟着图灵听课去!'],
+    author: '袁野',
+    avatar: '/avatar/2.png'
+  },
+  {
+    title: '6月书讯：看到这么多本硬核新书，太激动了！',
+    date: '2019-05-30',
+    actions: [1, 174],
+    tags: [],
+    topics: [],
+    author: '张敏',
+    avatar: '/avatar/3.png'
+  },
+  {
+    title: 'Gradle Project Sync Failed',
+    date: '2019-05-25',
+    actions: [1, 184],
+    tags: ['读书笔记'],
+    topics: [],
+    author: '白色风车',
+    avatar: '/avatar/4.png'
+  },
+  {
+    title: '使用 Elasticsearch 做一个好用的日语搜索引擎及自动补全',
+    date: '2019-05-27',
+    actions: [2, 156],
+    tags: [],
+    topics: [],
+    author: 'Allo',
+    avatar: '/avatar/5.png'
+  },
+  {
+    title: '观影2019｜海蒂和爷爷',
+    date: '2019-05-24',
+    actions: [0, 234],
+    tags: [],
+    topics: ['QuanTalk'],
+    author: 'AdolphLWQ',
+    avatar: '/avatar/6.png'
+  }
+]
+
 const shuffle = (items: Array<any>) => {
   return items.sort(() => Math.random() - 0.5)
 }
@@ -126,11 +192,15 @@ Mock.mock(homeDataUrl, () => {
     })
   }
 
+  homeData.articles = shuffle(articles).slice(0, Math.floor(3 + Math.random() * (books.length - 3)))
+
   return homeData
 })
 
 // MoreBooks
-Mock.mock(moreBooksUrl, shuffle(books).slice(0, Math.floor(9 + Math.random() * (books.length - 9))))
+Mock.mock(moreBooksUrl, () => {
+  return shuffle(books).slice(0, Math.floor(9 + Math.random() * (books.length - 9)))
+})
 
 // UserInfo
 Mock.mock(userInfoUrl, (): UserInfo => {
@@ -141,3 +211,12 @@ Mock.mock(userInfoUrl, (): UserInfo => {
     actionTopics: ['文章', '评论', '推荐', '收藏']
   }
 })
+
+// Articles
+Mock.mock(articlesUrl, () => {
+  return shuffle(articles)
+})
+
+// About
+console.info('Imitation of ituring mobile page By Jimzjy')
+console.info('https://github.com/Jimzjy/ituring-mobile-imitate')

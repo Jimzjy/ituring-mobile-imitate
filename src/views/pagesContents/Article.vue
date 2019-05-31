@@ -1,22 +1,28 @@
 <template>
   <div id="article">
     <topic-tab-view @on-topic-click="onTopicChange"></topic-tab-view>
+    <article-list-view :articles="articles" class="articles"></article-list-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { TopicTabView } from '@/components'
+import { TopicTabView, ArticleListView } from '@/components'
+import { articlesUrl } from '@/service'
 
 @Component({
   components: {
-    'topic-tab-view': TopicTabView
+    'topic-tab-view': TopicTabView,
+    'article-list-view': ArticleListView
   }
 })
 export default class Article extends Vue {
+  $http!: any
   subscription!: Function
+  articles = []
 
   created () {
+    this.updateData()
     this.subscription = this.$store.subscribe(mutation => {
       if (mutation.type === 'changeCurrentHeaderNav') {
         this.updateData()
@@ -33,7 +39,9 @@ export default class Article extends Vue {
   }
 
   updateData () {
-    console.log('update data')
+    this.$http.get(articlesUrl).then((response: any) => {
+      this.articles = response.data
+    })
   }
 }
 </script>
@@ -42,8 +50,12 @@ export default class Article extends Vue {
 
 #article {
   background: #fff;
-  height: 100vh;
+  min-height: 100vh;
   border-radius: .5rem .5rem 0 0;
+
+  .articles {
+    padding-left: 15px;
+  }
 }
 
 </style>

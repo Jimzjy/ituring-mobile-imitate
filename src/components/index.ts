@@ -5,6 +5,7 @@ import Swiper from './Swiper.vue'
 import BookListView from './BookListView.vue'
 import SpecialView from './SpecialView.vue'
 import TopicTabView from './TopicTabView.vue'
+import ArticleListView from './ArticleListView.vue'
 
 export {
   HeaderMenu,
@@ -13,5 +14,6 @@ export {
   Swiper,
   BookListView,
   SpecialView,
-  TopicTabView
+  TopicTabView,
+  ArticleListView
 }
