@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 import { Swiper, SpecialView, BookListView, ArticleListView } from '@/components'
 import { homeDataUrl } from '@/service'
 import { HomeData } from '@/model'
@@ -36,7 +36,6 @@ export default class Home extends Vue {
     this.updateData()
   }
 
-  @Watch('$route')
   updateData () {
     this.$http.get(homeDataUrl).then((resposne: any) => {
       this.data = resposne.data

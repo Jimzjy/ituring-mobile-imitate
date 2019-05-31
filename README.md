@@ -1,7 +1,7 @@
 ### Preview
 https://jimzjy.github.io/ituring-mobile-imitate/
 
-<img src="./public/preview.png" width="70%"/>
+![preview](./public/preview.png)
 
 ### Usage
 ```
