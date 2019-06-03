@@ -42,8 +42,10 @@ export default class Book extends Vue {
   }
 
   updateData () {
+    this.$store.commit('loading', true)
     this.$http.get(moreBooksUrl).then((response: any) => {
       this.books = response.data
+      this.$store.commit('loading', false)
     })
   }
 }

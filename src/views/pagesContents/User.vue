@@ -55,8 +55,10 @@ export default class User extends Vue {
   ]
 
   created () {
+    this.$store.commit('loading', true)
     this.$http.get(userInfoUrl).then((response: any) => {
       this.userInfo = response.data
+      this.$store.commit('loading', false)
     })
   }
 

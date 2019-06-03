@@ -6,6 +6,8 @@ import BookListView from './BookListView.vue'
 import SpecialView from './SpecialView.vue'
 import TopicTabView from './TopicTabView.vue'
 import ArticleListView from './ArticleListView.vue'
+import Loading from './Loading.vue'
+import Sepline from './Sepline.vue'
 
 export {
   HeaderMenu,
@@ -15,5 +17,7 @@ export {
   BookListView,
   SpecialView,
   TopicTabView,
-  ArticleListView
+  ArticleListView,
+  Loading,
+  Sepline
 }

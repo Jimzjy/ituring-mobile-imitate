@@ -37,8 +37,10 @@ export default class Home extends Vue {
   }
 
   updateData () {
+    this.$store.commit('loading', true)
     this.$http.get(homeDataUrl).then((resposne: any) => {
       this.data = resposne.data
+      this.$store.commit('loading', false)
     })
   }
 }

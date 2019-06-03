@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loginStatus: false,
-    currentHeaderNav: 0
+    currentHeaderNav: 0,
+    loading: false
   },
   mutations: {
     login (state) {
@@ -17,6 +18,9 @@ export default new Vuex.Store({
     },
     changeCurrentHeaderNav (state, n) {
       state.currentHeaderNav = n
+    },
+    loading (state, status) {
+      state.loading = status
     }
   },
   actions: {

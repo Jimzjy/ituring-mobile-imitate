@@ -4,7 +4,7 @@ import { routePageNames } from '@/router'
 import { InfoSwipe, HomeData, Book, UserInfo, Article } from '@/model'
 
 Mock.setup({
-  timeout: '0'
+  timeout: '400-600'
 })
 
 const topicsHome = [

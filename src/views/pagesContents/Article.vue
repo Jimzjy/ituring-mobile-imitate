@@ -39,8 +39,10 @@ export default class Article extends Vue {
   }
 
   updateData () {
+    this.$store.commit('loading', true)
     this.$http.get(articlesUrl).then((response: any) => {
       this.articles = response.data
+      this.$store.commit('loading', false)
     })
   }
 }
