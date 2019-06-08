@@ -8,5 +8,10 @@ https://jimzjy.github.io/ituring-mobile-imitate/
 npm install
 npm run serve
 ```
+or
+```
+npm install
+npm run electron:serve
+```
 
 Imitation of http://m.ituring.com.cn/
